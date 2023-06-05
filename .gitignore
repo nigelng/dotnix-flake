@@ -1,0 +1,5 @@
+.vscode
+!config/*.json
+private*
+./darwin/result
+result

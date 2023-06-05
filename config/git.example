@@ -1,0 +1,22 @@
+{
+  "includes": [
+    {
+      "condition": "gitdir:~/Workspaces/example/",
+      "contents": {
+        "user": {
+          "email": "nigel@example.com",
+          "signingKey": "AAABBBCCCDDD"
+        },
+        "commit": {
+          "gpgSign": true
+        }
+      }
+    }
+  ],
+  "ignores": [
+    "Content",
+    "of",
+    ".gitignore",
+    "file"
+  ]
+}
