@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ lib, pkgs, systemConfig, ... }: {
   # Fish shell
   programs.fish = {
     enable = true;
@@ -9,11 +9,31 @@
     '';
     loginShellInit = ''
       # brew path
-      eval "$(/opt/homebrew/bin/brew shellenv)"
+      eval "$(${systemConfig.brewPrefix}/brew shellenv)"
     '';
-    interactiveShellInit = ''
-      set fish_greeting # Disable greeting
-    '';
+    interactiveShellInit = lib.strings.concatStrings
+      (lib.strings.intersperse "\n" [
+        "set fish_greeting" # disable welcome message
+        # (builtins.readFile ./conf.fish)
+        "set -g SHELL ${pkgs.fish}/bin/fish"
+        # set -gx fish_user_paths $HOME/go/bin $HOME/.cargo/bin
+        # "set -g theme_nerd_fonts yes"
+        # "set -g theme_newline_cursor yes"
+        "set fzf_preview_dir_cmd exa --all --color=always"
+        # "set -gx EDITOR nvim"
+        # To deal with fish not ordering the nix paths first https://github.com/LnL7/nix-darwin/issues/122
+        "fish_add_path --move --prepend --path $HOME/.nix-profile/bin /run/wrappers/bin /etc/profiles/per-user/$USER/bin /nix/var/nix/profiles/default/bin /run/current-system/sw/bin"
+      ]);
+
+    shellAliases = {
+      gc = "git commit";
+      gp = "git push";
+      gs = "git status";
+      gt = "git tag";
+      gl =
+        "git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all";
+    };
+
     plugins = with pkgs.fishPlugins; [
       # Themes / Styles
       # { name = "pure"; src = pure.src; }
@@ -123,7 +143,7 @@
 
     profileExtra = ''
       # brew path
-      eval "$(/opt/homebrew/bin/brew shellenv)"
+      eval "$(${systemConfig.brewPrefix}/brew shellenv)"
     '';
   };
 }

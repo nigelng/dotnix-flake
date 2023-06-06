@@ -6,7 +6,10 @@ System packages also installed.
 
 - fish [Fish shell](https://fishshell.com)
 - zsh
-- Fonts: `hack-font`, `fira-code`, `open-sans`, `source-code-pro`, `jetbrains-mono`
+
+- MacOS Only:
+  - Fonts: `hack-font`, `fira-code`, `open-sans`, `source-code-pro`, `jetbrains-mono` with [`nerd-fonts`](https://www.nerdfonts.com) overlay
+  - [Kitty](https://sw.kovidgoyal.net/kitty/) terminal with [Catpucinn-Mocha theme](https://github.com/catppuccin)
 
 Following are extra that will be added on to current-user scope:
 
@@ -92,11 +95,29 @@ Notes:
   }
   ```
 
+- On WSL, ensure `~/.config/nix/nix.conf` is available with content
+
+  ```conf
+  # nix/nix.conf
+  experimental-features = nix-command flakes
+  ```
+
 - Commit
 
 ## 🏃 Run the specific script
 
-- On MacOSX `darwin-rebuild switch --flake .`
+### Mac OS
+
+```sh
+darwin-rebuild switch --flake .
+```
+
+### WSL
+
+```sh
+nix build .#homeConfigurations.<hostname>.activationPackage # product a result folder
+./result/activate
+```
 
 ## 🤡 Caveats
 
@@ -114,3 +135,5 @@ Notes:
     # zsh
     chsh -s /run/current-system/sw/bin/fish
   ```
+
+- On WSL, `fish` is not working due to missing `$PATH`

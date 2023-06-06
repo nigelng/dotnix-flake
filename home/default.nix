@@ -10,6 +10,7 @@ in {
     ./gpg.nix
     ./shells.nix
     ./ssh.nix
+    ./starship.nix
     ./zoxide.nix
     # extensions
     ./home.macos.nix
@@ -17,7 +18,8 @@ in {
   ];
 
   programs = {
-    home-manager.enable = true;
+    home-manager.enable =
+      pkgs.stdenv.hostPlatform.isDarwin; # Only enable in darwin via nix-darwin
     man.enable = true;
     htop.enable = true;
     dircolors.enable = true;
@@ -37,6 +39,7 @@ in {
       grep = "grep --color=auto";
       find = "fd";
       cls = "clear";
+      wo = "cd ~/Workspaces";
 
       # Nix garbage collection
       garbage = "nix-collect-garbage -d && docker image prune --force";

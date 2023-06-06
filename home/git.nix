@@ -6,7 +6,7 @@
     settings = {
       prompt = "enabled";
       editor = "vim";
-      git_protocol = "ssh";
+      git_protocol = "https";
     };
     enableGitCredentialHelper = true;
     extensions = with pkgs; [ gh-eco gh-dash gh-markdown-preview ];

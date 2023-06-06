@@ -5,14 +5,19 @@
   "screenshotFolder": "~/Downloads",
   "homeManagerVersion": "23.05",
   "fonts": [
-    "hack-font",
-    "fira-code",
-    "source-code-pro",
-    "jetbrains-mono",
+    "fira",
     "open-sans",
-    "source-sans-pro",
-    "font-awesome"
+    "source-sans-pro"
   ],
+  "nerdFonts": [
+    "fira-code",
+    "noto-fonts",
+    "font-awesome",
+    "jetbrains-mono",
+    "hack-font",
+    "source-code-pro"
+  ],
+  "brewPrefix": "/opt/homebrew/bin",
   "trustedUsers": [],
   "allowedUsers": [
     "*"
