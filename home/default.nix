@@ -17,7 +17,7 @@ in {
   ];
 
   programs = {
-    home-manager.enable = true;
+    home-manager.enable = pkgs.stdenv.hostPlatform.isDarwin; # Only enable in darwin via nix-darwin
     man.enable = true;
     htop.enable = true;
     dircolors.enable = true;

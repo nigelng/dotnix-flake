@@ -92,11 +92,29 @@ Notes:
   }
   ```
 
+- On WSL, ensure `~/.config/nix/nix.conf` is available with content
+
+  ```conf
+  # nix/nix.conf
+  experimental-features = nix-command flakes
+  ```
+
 - Commit
 
 ## 🏃 Run the specific script
 
-- On MacOSX `darwin-rebuild switch --flake .`
+### Mac OS
+
+```sh
+darwin-rebuild switch --flake .
+```
+
+### WSL
+
+```sh
+nix build .#homeConfigurations.<hostname>.activationPackage # product a result folder
+./result/activate
+```
 
 ## 🤡 Caveats
 
@@ -114,3 +132,5 @@ Notes:
     # zsh
     chsh -s /run/current-system/sw/bin/fish
   ```
+
+- On WSL, `fish` is not working due to missing `$PATH`

@@ -4,7 +4,7 @@
       "flake": false,
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-PvoOoY72m4qxDyL845ThYMzYvStwMyFdywsH183p4kI=",
+        "narHash": "sha256-UaojyapiEDXOm3dQ/k7ruG9gib7K9oBmnq4rO5hBePs=",
         "path": "./config",
         "type": "path"
       },
@@ -61,18 +61,18 @@
         ]
       },
       "locked": {
-        "lastModified": 1686035298,
-        "narHash": "sha256-3kvizaRKQELx8760KwQ9A79t5LxGMLK9XbT2Lup3qg0=",
+        "lastModified": 1686085402,
+        "narHash": "sha256-1snX1nGPerM/6g9JzbqUeusUYaShBr7/dgttIutVESQ=",
         "ref": "main",
-        "rev": "54598fd81cf8c052cbbee3ff9d1bece867db1b97",
+        "rev": "2436ee04509fb80b53c1fc38ee958f30170d5212",
         "revCount": 3,
         "type": "git",
-        "url": "ssh://git@github.com/nigelng/dotnix-config"
+        "url": "https://github.com/nigelng/dotnix-config"
       },
       "original": {
         "ref": "main",
         "type": "git",
-        "url": "ssh://git@github.com/nigelng/dotnix-config"
+        "url": "https://github.com/nigelng/dotnix-config"
       }
     },
     "nixpkgs": {
@@ -93,11 +93,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1685865905,
-        "narHash": "sha256-XJZ/o17eOd2sEsGif+/MQBnfa2DKmndWgJyc7CWajFc=",
+        "lastModified": 1685952468,
+        "narHash": "sha256-YCOr9kttCqoa9IZMjHxX6SlwenTg7FsSmG9TaT76mSE=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "e7603eba51f2c7820c0a182c6bbb351181caa8e7",
+        "rev": "70f7275b32f49bc67ae3532b758b80cb6c27f98a",
         "type": "github"
       },
       "original": {

@@ -13,6 +13,7 @@
     "source-sans-pro",
     "font-awesome"
   ],
+  "brewPrefix": "/opt/homebrew/bin",
   "trustedUsers": [],
   "allowedUsers": [
     "*"

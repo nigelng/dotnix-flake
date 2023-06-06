@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, systemConfig, ... }: {
   # Fish shell
   programs.fish = {
     enable = true;
@@ -9,7 +9,7 @@
     '';
     loginShellInit = ''
       # brew path
-      eval "$(/opt/homebrew/bin/brew shellenv)"
+      eval "$(${systemConfig.brewPrefix}/brew shellenv)"
     '';
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
@@ -123,7 +123,7 @@
 
     profileExtra = ''
       # brew path
-      eval "$(/opt/homebrew/bin/brew shellenv)"
+      eval "$(${systemConfig.brewPrefix}/brew shellenv)"
     '';
   };
 }
