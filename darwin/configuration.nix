@@ -43,6 +43,7 @@ in {
   programs = {
     zsh.enable = true;
     fish.enable = true;
+    gnupg.agent.enable = true;
   };
 
   services = { nix-daemon.enable = true; };
