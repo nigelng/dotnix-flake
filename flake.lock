@@ -61,11 +61,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1686022204,
-        "narHash": "sha256-If23YiDWcWwd6hnJ/9PNQMY7uxD/EiJNaE0eejPfhn8=",
+        "lastModified": 1686035298,
+        "narHash": "sha256-3kvizaRKQELx8760KwQ9A79t5LxGMLK9XbT2Lup3qg0=",
         "ref": "main",
-        "rev": "af93ddbbf55bda688d90ab031ba818de1563e95b",
-        "revCount": 2,
+        "rev": "54598fd81cf8c052cbbee3ff9d1bece867db1b97",
+        "revCount": 3,
         "type": "git",
         "url": "ssh://git@github.com/nigelng/dotnix-config"
       },
