@@ -51,7 +51,7 @@ in {
     enable = true;
     brews = appConfig.brew;
     casks = appConfig.cask;
-    brewPrefix = "/opt/homebrew/bin";
+    brewPrefix = systemConfig.brewPrefix;
     global = { brewfile = true; };
     onActivation = {
       cleanup = "zap";

@@ -38,7 +38,7 @@
       };
 
       mahConfig = { # My personal config
-        url = "git+ssh://git@github.com/nigelng/dotnix-config?ref=main";
+        url = "git+https://github.com/nigelng/dotnix-config?ref=main";
         inputs.mahConfig.follows = "baseConfig";
       };
 
@@ -79,10 +79,11 @@
           inherit appConfig systemConfig userConfig gitConfig;
         });
 
-      # homeConfigurations = ( # Non-NixOS configurations
-      #   import ./nix {
-      #     inherit (nixpkgs) lib;
-      #     inherit inputs nixpkgs nixpkgs-stable home-manager user;
-      #   });
+      homeConfigurations = ( # Non-NixOS configurations
+        import ./wsl {
+          inherit (nixpkgs) lib;
+          inherit inputs nixpkgs nixpkgs-stable home-manager;
+          inherit appConfig systemConfig userConfig gitConfig;
+        });
     };
 }

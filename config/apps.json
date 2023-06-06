@@ -13,9 +13,7 @@
     "zoom-us",
     "vscode"
   ],
-  "systemLinux": [
-    "pinentry"
-  ],
+  "systemWSL": [],
   "mas": {
     "Keynote": 409183694,
     "Pages": 409201541,
