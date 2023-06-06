@@ -4,7 +4,7 @@
 #   └─ ./darwin
 #       ├─ ./default.nix *
 #       ├─ configuration.nix
-#       └─ home.nix
+#       └─ system.nix
 #
 
 { inputs, nixpkgs, nixpkgs-stable, home-manager, darwin, systemConfig, appConfig

@@ -1,9 +1,32 @@
 # flake.nix *
-#   ├─ ./darwin
-#   │   └─ default.nix
-#   └─ ./wsl
+#   ├── ./config
+#   │   ├─ ./apps.json      # Apps needed to be installed
+#   │   ├─ ./system.json    # System details
+#   │   ├─ ./user.json      # Current user details
+#   │   └─ ./git.json       # Git config
+#   │
+#   ├── ./darwin
+#   │   ├─ ./default.nix *
+#   │   ├─ configuration.nix
+#   │   └─ system.nix
+#   │
+#   ├── ./home
+#   │   ├─ ./default.nix *  # Imports all below nix
+#   │   ├─ direnv.nix
+#   │   ├─ exa.nix
+#   │   ├─ fzf.nix
+#   │   ├─ git.nix
+#   │   ├─ gpg.nix
+#   │   ├─ home.macosx.nix  # MacOS specific
+#   │   ├─ home.wsl.nix     # WSL specific
+#   │   ├─ shells.nix
+#   │   ├─ ssh.nix
+#   │   └─ zoxide.nix
+#   │
+#   └── ./wsl
 #       └─ default.nix
 #
+
 {
   description = "Personal flake configs for various setup";
 
@@ -14,8 +37,10 @@
         flake = false;
       };
 
-      mahConfig.url = "git+ssh://git@github.com/nigelng/dotnix-config?ref=main";
-      mahConfig.inputs.mahConfig.follows = "baseConfig";
+      mahConfig = { # My personal config
+        url = "git+ssh://git@github.com/nigelng/dotnix-config?ref=main";
+        inputs.mahConfig.follows = "baseConfig";
+      };
 
       nixpkgs.url =
         "github:nixos/nixpkgs/nixos-unstable"; # Unstable Nix Packages
