@@ -4,15 +4,8 @@
   "hostName": "",
   "screenshotFolder": "~/Downloads",
   "homeManagerVersion": "23.05",
-  "fonts": [
-    "hack-font",
-    "fira-code",
-    "source-code-pro",
-    "jetbrains-mono",
-    "open-sans",
-    "source-sans-pro",
-    "font-awesome"
-  ],
+  "fonts": [],
+  "nerdFonts": [],
   "brewPrefix": "/opt/homebrew/bin",
   "trustedUsers": [],
   "allowedUsers": [

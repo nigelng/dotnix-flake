@@ -6,7 +6,10 @@ System packages also installed.
 
 - fish [Fish shell](https://fishshell.com)
 - zsh
-- Fonts: `hack-font`, `fira-code`, `open-sans`, `source-code-pro`, `jetbrains-mono`
+
+- MacOS Only:
+  - Fonts: `hack-font`, `fira-code`, `open-sans`, `source-code-pro`, `jetbrains-mono` with [`nerd-fonts`](https://www.nerdfonts.com) overlay
+  - [Kitty](https://sw.kovidgoyal.net/kitty/) terminal with [Catpucinn-Mocha theme](https://github.com/catppuccin)
 
 Following are extra that will be added on to current-user scope:
 

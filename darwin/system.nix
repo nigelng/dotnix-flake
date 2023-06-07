@@ -2,6 +2,8 @@
 let
   systemFonts =
     builtins.map (app: builtins.getAttr app pkgs) systemConfig.fonts;
+  nerdFonts = with pkgs;
+    [ (nerdfonts.override { fonts = systemConfig.nerdFonts; }) ];
 in {
   system = {
     stateVersion = 4;
@@ -71,7 +73,7 @@ in {
   # fonts
   fonts = {
     fontDir.enable = true;
-    fonts = systemFonts;
+    fonts = systemFonts ++ nerdFonts;
   };
 
   # Add ability to used TouchID for sudo authentication

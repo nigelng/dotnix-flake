@@ -19,30 +19,13 @@
     "Pages": 409201541,
     "Numbers": 409203825
   },
-  "brew": [
-    "pinentry-mac"
-  ],
-  "cask": [
-    "1password",
-    "1password-cli",
-    "android-studio",
-    "docker",
-    "caffeine",
-    "mongodb-compass",
-    "oracle-jdk",
-    "rectangle",
-    "via",
-    "raycast"
-  ],
+  "brew": [],
+  "cask": [],
   "user": [
     "jq",
-    "cowsay",
     "coreutils",
     "grc",
     "awscli2",
-    "aws-vault",
-    "mongodb-tools",
-    "youtube-dl-light",
-    "yubikey-manager"
+    "aws-vault"
   ]
 }
