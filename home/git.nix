@@ -1,4 +1,5 @@
-{ pkgs, lib, gitConfig, userConfig, ... }: {
+{ lib, pkgs, gitConfig, userConfig, ... }:
+with lib; {
   home.packages = [ pkgs.github-copilot-cli ];
 
   programs.gh = {
@@ -12,7 +13,7 @@
     extensions = with pkgs; [ gh-eco gh-dash gh-markdown-preview ];
   };
 
-  programs.git = lib.mergeAttrs gitConfig {
+  programs.git = mergeAttrs gitConfig {
     enable = true;
     userName = userConfig.name;
     userEmail = userConfig.email;

@@ -35,7 +35,7 @@ in {
 
         # Enable subpixel font rendering on non-Apple LCDs
         # Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501
-        AppleFontSmoothing = 1;
+        # AppleFontSmoothing = 1;
 
         # Finder: show all filename extensions
         AppleShowAllExtensions = true;
@@ -57,7 +57,6 @@ in {
       dock = {
         tilesize = 48;
         orientation = "bottom";
-        showhidden = true;
         show-process-indicators = true;
 
         # enable spring loading (hold a dragged file over an icon to drop/open it there)
