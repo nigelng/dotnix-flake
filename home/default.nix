@@ -1,33 +1,68 @@
-{ pkgs, systemConfig, appConfig, gitConfig, ... }:
+{ pkgs, systemConfig, appConfig, gitConfig, userConfig, ... }:
 let userApps = builtins.map (app: builtins.getAttr app pkgs) appConfig.user;
-
 in {
   imports = [
-    ./direnv.nix
-    ./exa.nix
-    ./fzf.nix
     ./git.nix
-    ./gpg.nix
     ./shells.nix
-    ./ssh.nix
-    ./starship.nix
-    ./zoxide.nix
+    ./vim.nix
     # extensions
     ./home.macos.nix
     ./home.wsl.nix
   ];
 
   programs = {
-    home-manager.enable =
-      pkgs.stdenv.hostPlatform.isDarwin; # Only enable in darwin via nix-darwin
-    man.enable = true;
-    htop.enable = true;
     dircolors.enable = true;
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
+    gpg = {
+      enable = true;
+      settings = {
+        default-key = userConfig.defaultGpgKey;
+        keyserver-options = "include-revoked";
+      };
+    };
+    htop.enable = true;
+    man.enable = true;
+    ssh = {
+      enable = true;
+
+      controlMaster = "auto";
+      controlPath = "~/.ssh/ssh-control-%r@%h:%p";
+      controlPersist = "5m";
+
+      extraConfig = let
+        idAgent = if pkgs.stdenv.hostPlatform.isDarwin then
+          ''
+            IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"''
+        else
+          "";
+      in ''
+        ${idAgent}
+
+      '';
+    };
+
+    # System specific
     macos-home.enable = pkgs.stdenv.hostPlatform.isDarwin;
     wsl-home.enable = pkgs.stdenv.hostPlatform.isLinux;
   };
 
-  editorconfig.enable = true;
+  editorconfig = {
+    enable = true;
+    settings = {
+      "*" = {
+        charset = "utf-8";
+        end_of_line = "lf";
+        trim_trailing_whitespace = true;
+        insert_final_newline = true;
+        max_line_width = 80;
+        indent_style = "space";
+        indent_size = 2;
+      };
+    };
+  };
 
   home = {
     stateVersion = systemConfig.homeManagerVersion;
@@ -40,6 +75,7 @@ in {
       find = "fd";
       cls = "clear";
       wo = "cd ~/Workspaces";
+      op = "/usr/local/bin/op";
 
       # Nix garbage collection
       garbage = "nix-collect-garbage -d && docker image prune --force";

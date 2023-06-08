@@ -38,7 +38,7 @@
       };
 
       mahConfig = { # My personal config
-        url = "git+https://github.com/nigelng/dotnix-config?ref=main";
+        url = "git+file:./privateConfig";
         inputs.mahConfig.follows = "baseConfig";
       };
 

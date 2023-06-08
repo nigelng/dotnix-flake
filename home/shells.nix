@@ -1,4 +1,44 @@
 { lib, pkgs, systemConfig, ... }: {
+  programs = {
+    exa = {
+      enable = true;
+      enableAliases = true;
+      git = true;
+      icons = true;
+      extraOptions = [ "--group-directories-first" "--header" ];
+    };
+    fzf = {
+      enable = true;
+      enableFishIntegration = true;
+      enableZshIntegration = true;
+    };
+    zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+      enableFishIntegration = true;
+    };
+  };
+
+  # Shell theme with Catpuccin and Starship Prompt
+  programs.starship =
+    let flavour = "mocha"; # One of `latte`, `frappe`, `macchiato`, or `mocha`
+    in {
+      enable = true;
+      enableZshIntegration = true;
+      enableFishIntegration = true;
+      settings = {
+        # Other config here
+        format = "$all"; # Remove this line to disable the default prompt format
+        palette = "catppuccin_${flavour}";
+      } // builtins.fromTOML (builtins.readFile (pkgs.fetchFromGitHub {
+        owner = "catppuccin";
+        repo = "starship";
+        rev =
+          "3e3e54410c3189053f4da7a7043261361a1ed1bc"; # Replace with the latest commit hash
+        sha256 = "soEBVlq3ULeiZFAdQYMRFuswIIhI9bclIU8WXjxd7oY=";
+      } + /palettes/${flavour}.toml));
+    };
+
   # Fish shell
   programs.fish = {
     enable = true;
@@ -8,6 +48,9 @@
       set fish_color_autosuggestion brblack
     '';
     loginShellInit = ''
+      # To deal with fish not ordering the nix paths first https://github.com/LnL7/nix-darwin/issues/122
+      fish_add_path --move --prepend --path $HOME/.nix-profile/bin /run/wrappers/bin /etc/profiles/per-user/$USER/bin /nix/var/nix/profiles/default/bin /run/current-system/sw/bin
+
       # brew path
       eval "$(${systemConfig.brewPrefix}/brew shellenv)"
     '';
@@ -17,9 +60,6 @@
         # (builtins.readFile ./conf.fish)
         "set -g SHELL ${pkgs.fish}/bin/fish"
         "set fzf_preview_dir_cmd exa --all --color=always"
-        # "set -gx EDITOR nvim"
-        # To deal with fish not ordering the nix paths first https://github.com/LnL7/nix-darwin/issues/122
-        "fish_add_path --move --prepend --path $HOME/.nix-profile/bin /run/wrappers/bin /etc/profiles/per-user/$USER/bin /nix/var/nix/profiles/default/bin /run/current-system/sw/bin"
       ]);
 
     shellAliases = {
@@ -92,7 +132,27 @@
   };
 
   # Zsh shell
-  home.file.".config/zsh/.zimrc".source = ./zsh/zimrc;
+  home.file.".config/zsh/.zimrc".text = ''
+    ## Start configuration added by Zim install
+    ## This is not sourced during shell startup, and it's only used to configure the
+    ## zimfw plugin manager.
+
+    # Modules
+    # Sets sane Zsh built-in environment options.
+    zmodule environment
+
+    zmodule git
+    zmodule input
+    zmodule termtitle
+    zmodule utility
+    zmodule archive
+
+    zmodule duration-info
+    zmodule git-info
+    zmodule prompt-pwd
+
+  '';
+
   programs.zsh = {
     enable = true;
     autocd = true;

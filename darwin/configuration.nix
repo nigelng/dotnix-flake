@@ -34,10 +34,7 @@ in {
   environment = {
     systemPackages = systemApps;
     shells = with pkgs; [ fish zsh ];
-    variables = {
-      EDITOR = "vim";
-      VISUAL = "code";
-    };
+    variables = { VISUAL = "code"; };
   };
 
   programs = {
@@ -67,4 +64,8 @@ in {
     home = "/Users/${userConfig.user}";
     shell = pkgs.fish;
   };
+
+  system.activationScripts.extraActivation.text = ''
+    cp ${pkgs._1password}/bin/op /usr/local/bin/op
+  '';
 }

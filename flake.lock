@@ -4,7 +4,7 @@
       "flake": false,
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-iHXHd02tGckMGBfGxbOLf1I257RNjRPLooC91U+WYXM=",
+        "narHash": "sha256-Ft4dw3ZwTOysxpfQEzO1C6yH4OvU/pXmxN1iZHv+wzQ=",
         "path": "./config",
         "type": "path"
       },
@@ -20,11 +20,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1685559570,
-        "narHash": "sha256-MNIQvLRoq92isMLR/ordKNCl+aXNiuwBM4QyqmS8d00=",
+        "lastModified": 1686307493,
+        "narHash": "sha256-R4VEFnDn7nRmNxAu1LwNbjns5DPM8IBsvnrWmZ8ymPs=",
         "owner": "lnl7",
         "repo": "nix-darwin",
-        "rev": "4338bc869e9874d54a4c89539af72f16666b2abe",
+        "rev": "7c16d31383a90e0e72ace0c35d2d66a18f90fb4f",
         "type": "github"
       },
       "original": {
@@ -41,11 +41,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1686126776,
-        "narHash": "sha256-cgomr+NMvIS9ov6OpwPFfnmwfzEisukjodQ+ZJy4YzE=",
+        "lastModified": 1686391840,
+        "narHash": "sha256-5S0APl6Mfm6a37taHwvuf11UHnAX0+PnoWQbsYbMUnc=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "3512a6dafb7836cfceef00dcb29ce6f01c2ce280",
+        "rev": "0144ac418ef633bfc9dbd89b8c199ad3a617c59f",
         "type": "github"
       },
       "original": {
@@ -61,27 +61,26 @@
         ]
       },
       "locked": {
-        "lastModified": 1686134984,
-        "narHash": "sha256-chtG8nLJsTFaJ4KxZxurQm59hA7/eaUYBNbUCeqicOI=",
-        "ref": "main",
-        "rev": "07c83503dbb39f54e0c49f3035f8917b0da36846",
+        "lastModified": 1686487924,
+        "narHash": "sha256-4z/GypnCmpObSCeItNd4M7p/TyXwiHrGE/+lyej+RVc=",
+        "ref": "refs/heads/main",
+        "rev": "c7edcda436b26b087154268300967fd5ade0a363",
         "revCount": 3,
         "type": "git",
-        "url": "https://github.com/nigelng/dotnix-config"
+        "url": "file:./privateConfig"
       },
       "original": {
-        "ref": "main",
         "type": "git",
-        "url": "https://github.com/nigelng/dotnix-config"
+        "url": "file:./privateConfig"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1685931219,
-        "narHash": "sha256-8EWeOZ6LKQfgAjB/USffUSELPRjw88A+xTcXnOUvO5M=",
+        "lastModified": 1686412476,
+        "narHash": "sha256-inl9SVk6o5h75XKC79qrDCAobTD1Jxh6kVYTZKHzewA=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "7409480d5c8584a1a83c422530419efe4afb0d19",
+        "rev": "21951114383770f96ae528d0ae68824557768e81",
         "type": "github"
       },
       "original": {
@@ -93,11 +92,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1686059680,
-        "narHash": "sha256-sp0WlCIeVczzB0G8f8iyRg3IYW7KG31mI66z7HIZwrI=",
+        "lastModified": 1686331006,
+        "narHash": "sha256-hElRDWUNG655aqF0awu+h5cmDN+I/dQcChRt2tGuGGU=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "a558f7ac29f50c4b937fb5c102f587678ae1c9fb",
+        "rev": "85bcb95aa83be667e562e781e9d186c57a07d757",
         "type": "github"
       },
       "original": {

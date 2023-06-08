@@ -87,13 +87,7 @@ Notes:
 
 - Setup a public/private repo `github:<username>/dotnix-config` (see [Example](https://github.com/nigelng/dotnix-config-example)).
 
-- Update `mahConfig.url` in `flake.nix` to the above repo url
-
-  ```nix
-  {
-    mahConfig.url = "git+ssh://git@github.com/nigelng/dotnix-config?ref=main";
-  }
-  ```
+- Clone to current setup as `privateConfig`. Checkout to the branch pertinent to the host.
 
 - On WSL, ensure `~/.config/nix/nix.conf` is available with content
 
@@ -115,7 +109,7 @@ darwin-rebuild switch --flake .
 ### WSL
 
 ```sh
-nix build .#homeConfigurations.<hostname>.activationPackage # product a result folder
+nix build ".#homeConfigurations.<hostname>.activationPackage" # product a result folder
 ./result/activate
 ```
 

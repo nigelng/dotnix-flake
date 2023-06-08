@@ -1,18 +1,19 @@
-{ pkgs, lib, gitConfig, userConfig, ... }: {
+{ lib, pkgs, gitConfig, userConfig, ... }:
+with lib; {
   home.packages = [ pkgs.github-copilot-cli ];
 
   programs.gh = {
     enable = true;
     settings = {
       prompt = "enabled";
-      editor = "vim";
+      editor = "nvim";
       git_protocol = "https";
     };
     enableGitCredentialHelper = true;
     extensions = with pkgs; [ gh-eco gh-dash gh-markdown-preview ];
   };
 
-  programs.git = lib.mergeAttrs gitConfig {
+  programs.git = mergeAttrs gitConfig {
     enable = true;
     userName = userConfig.name;
     userEmail = userConfig.email;
@@ -35,7 +36,7 @@
       core = {
         preloadindex = true;
         fscache = true;
-        editor = "vim";
+        editor = "nvim";
       };
       color = {
         ui = true;
