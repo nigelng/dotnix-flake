@@ -5,6 +5,7 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-uRnmAV+U0mU7ZB5Ln2nAy+WVc8ioVF5Nj5Ui2A0nWu0=",
+        "narHash": "sha256-uRnmAV+U0mU7ZB5Ln2nAy+WVc8ioVF5Nj5Ui2A0nWu0=",
         "path": "./config",
         "type": "path"
       },
@@ -20,11 +21,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1685559570,
-        "narHash": "sha256-MNIQvLRoq92isMLR/ordKNCl+aXNiuwBM4QyqmS8d00=",
+        "lastModified": 1686210161,
+        "narHash": "sha256-cgP8P2Gk4WtOzd/Y7nEmweLpPOtMKVvHCIcq9zm9qMk=",
         "owner": "lnl7",
         "repo": "nix-darwin",
-        "rev": "4338bc869e9874d54a4c89539af72f16666b2abe",
+        "rev": "40e4b85baac86969f94d6dba893aeae015c562c1",
         "type": "github"
       },
       "original": {
@@ -61,16 +62,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1686192015,
-        "narHash": "sha256-gPklOBtRl5q3IxpqNGBKh8rCMhBrUUv6IdnsR3FHbjM=",
-        "ref": "main",
-        "rev": "e796a3a7232070a709b1adc6ccad2ffd729b755d",
-        "revCount": 3,
+        "lastModified": 1686210912,
+        "narHash": "sha256-xp5j+gjxpn0NwHMcN5kIef+xgkMf+oSErEkuldWRiUU=",
+        "ref": "refs/heads/wsl-config",
+        "rev": "423a5aa0261810203c7015f9f0664da054e10bc0",
+        "revCount": 5,
         "type": "git",
         "url": "file:./privateConfig"
       },
       "original": {
-        "ref": "main",
         "type": "git",
         "url": "file:./privateConfig"
       }

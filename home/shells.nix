@@ -48,6 +48,9 @@
       set fish_color_autosuggestion brblack
     '';
     loginShellInit = ''
+      # To deal with fish not ordering the nix paths first https://github.com/LnL7/nix-darwin/issues/122
+      fish_add_path --move --prepend --path $HOME/.nix-profile/bin /run/wrappers/bin /etc/profiles/per-user/$USER/bin /nix/var/nix/profiles/default/bin /run/current-system/sw/bin
+
       # brew path
       eval "$(${systemConfig.brewPrefix}/brew shellenv)"
     '';
@@ -58,8 +61,6 @@
         "set -g SHELL ${pkgs.fish}/bin/fish"
         "set fzf_preview_dir_cmd exa --all --color=always"
         # "set -gx EDITOR nvim"
-        # To deal with fish not ordering the nix paths first https://github.com/LnL7/nix-darwin/issues/122
-        "fish_add_path --move --prepend --path $HOME/.nix-profile/bin /run/wrappers/bin /etc/profiles/per-user/$USER/bin /nix/var/nix/profiles/default/bin /run/current-system/sw/bin"
       ]);
 
     shellAliases = {

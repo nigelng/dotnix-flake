@@ -38,7 +38,7 @@
       };
 
       mahConfig = { # My personal config
-        url = "git+file:./privateConfig?ref=main";
+        url = "git+file:./privateConfig";
         inputs.mahConfig.follows = "baseConfig";
       };
 

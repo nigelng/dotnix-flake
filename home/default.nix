@@ -1,10 +1,10 @@
 { pkgs, systemConfig, appConfig, gitConfig, userConfig, ... }:
 let userApps = builtins.map (app: builtins.getAttr app pkgs) appConfig.user;
-
 in {
   imports = [
     ./git.nix
     ./shells.nix
+    ./vim.nix
     # extensions
     ./home.macos.nix
     ./home.wsl.nix
