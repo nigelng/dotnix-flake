@@ -87,7 +87,7 @@ Notes:
 
 - Setup a public/private repo `github:<username>/dotnix-config` (see [Example](https://github.com/nigelng/dotnix-config-example)).
 
-- Clone to current setup as `privateConfig`. Checkout to the branch pertinent to the host.
+- Clone to current setup as `config`. Checkout to the branch pertinent to the host.
 
 - On WSL, ensure `~/.config/nix/nix.conf` is available with content
 
@@ -103,8 +103,14 @@ Notes:
 ### Mac OS
 
 ```sh
-darwin-rebuild switch --flake .
+nix build .#darwinConfigurations.<host>.system
+./result/sw/bin/darwin-rebuild switch --flake .
 ```
+
+**Note**: After initial setup, `darwin-rebuild` should be in `PATH`
+
+`darwin-rebuild switch --flake .`
+
 
 ### WSL
 

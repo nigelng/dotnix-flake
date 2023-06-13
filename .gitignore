@@ -1,5 +1,4 @@
 .vscode
-!config/*.json
-privateConfig/
-./darwin/result
+darwin/result
 result
+config/

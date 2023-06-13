@@ -7,8 +7,8 @@
 #       └─ system.nix
 #
 
-{ inputs, nixpkgs, nixpkgs-stable, home-manager, darwin, systemConfig, appConfig
-, userConfig, gitConfig, ... }:
+{ inputs, nixpkgs, home-manager, darwin, systemConfig, appConfig, userConfig
+, gitConfig, ... }:
 
 let
   system = "aarch64-darwin"; # M-series chip
@@ -18,16 +18,10 @@ let
     config.allowUnfree = true; # Allow proprietary software
   };
 
-  stable = import nixpkgs-stable {
-    inherit system;
-    config.allowUnfree = true; # Allow proprietary software
-  };
 in {
   ${systemConfig.hostName} = darwin.lib.darwinSystem {
     inherit system;
-    specialArgs = {
-      inherit inputs pkgs stable systemConfig appConfig userConfig;
-    };
+    specialArgs = { inherit inputs pkgs systemConfig appConfig userConfig; };
     modules = [ # Modules that are used
       ./configuration.nix
       ./system.nix
