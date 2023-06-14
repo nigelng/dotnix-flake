@@ -77,8 +77,24 @@ in {
       wo = "cd ~/Workspaces";
       op = "/usr/local/bin/op";
 
+      Gf = "git fetch";
+      Ga = "git add";
+      Gb = "git branch";
+      Gc = "git commit";
+      Gco = "git checkout";
+      Gcg = "git gc";
+      Gp = "git push";
+      Gr = "git rebase";
+      Gs = "git status";
+      Gt = "git tag";
+      Gl =
+        "git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all";
+
       # Nix garbage collection
       garbage = "nix-collect-garbage -d && docker image prune --force";
+
+      load_gh_token =
+        "export NODE_AUTH_TOKEN=$(/usr/local/bin/op item get 245emzlxcgvgpkwp6cwcsxidhe --fields label=token) >> /dev/null";
     };
   };
 }

@@ -62,19 +62,6 @@
         "set fzf_preview_dir_cmd exa --all --color=always"
       ]);
 
-    shellAliases = {
-      Gf = "git fetch";
-      Ga = "git add";
-      Gc = "git commit";
-      Gco = "git checkout";
-      Gp = "git push";
-      Gr = "git rebase";
-      Gs = "git status";
-      Gt = "git tag";
-      Gl =
-        "git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all";
-    };
-
     plugins = with pkgs.fishPlugins; [
       # Themes / Styles
       # { name = "pure"; src = pure.src; }
@@ -204,7 +191,6 @@
 
     profileExtra = ''
       # brew path
-      eval "$(${systemConfig.brewPrefix}/brew shellenv)"
       eval "$(${systemConfig.brewPrefix}/brew shellenv)"
     '';
   };
