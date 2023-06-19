@@ -70,7 +70,7 @@ As mentioned, fish and zsh shells are available (asides from system provided she
 Notes:
 
 - If `/etc/nix/nix.conf` already existed, move it to `~/.config/nix/nix.conf`
-- If `/etc/shells` already existed, back up and remove
+- If `/etc/shells` or similar files already existed, back up and remove
 - If running into error `...ln: failed to create symbolic link '/run': Read-only file system`
 
   ```sh
