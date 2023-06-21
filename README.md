@@ -136,4 +136,4 @@ nix build ".#homeConfigurations.<hostname>.activationPackage" # product a result
     chsh -s /run/current-system/sw/bin/fish
   ```
 
-- On WSL, `fish` is not working due to missing `$PATH`
+- On WSL, it's expected to install 1P-cli in WSL under path `/usr/bin/`

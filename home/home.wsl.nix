@@ -13,6 +13,8 @@ in {
       enableFishIntegration = true;
       enableZshIntegration = true;
     };
+
+    home.shellAliases = { op = "/usr/bin/op"; };
   };
 }
 

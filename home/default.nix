@@ -75,7 +75,6 @@ in {
       find = "fd";
       cls = "clear";
       wo = "cd ~/Workspaces";
-      op = "/usr/local/bin/op";
 
       Gf = "git fetch";
       Ga = "git add";

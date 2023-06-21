@@ -84,10 +84,6 @@
         src = foreign-env.src;
       }
       {
-        name = "sponge";
-        src = sponge.src;
-      }
-      {
         name = "pisces";
         src = pisces.src;
       }

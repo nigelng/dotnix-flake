@@ -9,7 +9,10 @@ in {
   };
 
   config = mkIf cfg.enable {
-    home.file.".config/kitty/tab_bar.py".source = ./macos/kitty_tab_bar_py;
+    home = {
+      file.".config/kitty/tab_bar.py".source = ./macos/kitty_tab_bar_py;
+      shellAliases = { op = "/usr/local/bin/op"; };
+    };
 
     programs.home-manager.enable = true; # Only enable in darwin via nix-darwin
 
