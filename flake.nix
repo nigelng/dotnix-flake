@@ -37,11 +37,6 @@
         flake = false;
       };
 
-      # mahConfig = { # My personal config
-      #   url = "git+file:./privateConfig";
-      #   inputs.mahConfig.follows = "baseConfig";
-      # };
-
       nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05"; # Unstable Nix Packages
 
       home-manager = { # User Package Management

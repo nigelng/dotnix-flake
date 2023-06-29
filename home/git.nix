@@ -1,7 +1,5 @@
 { lib, pkgs, gitConfig, userConfig, ... }:
 with lib; {
-  home.packages = [ pkgs.github-copilot-cli ];
-
   programs.gh = {
     enable = true;
     settings = {

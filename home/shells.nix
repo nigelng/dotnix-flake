@@ -107,10 +107,6 @@
         name = "bass";
         src = bass.src;
       }
-      {
-        name = "github-copilot-cli-fish";
-        src = github-copilot-cli-fish.src;
-      }
     ];
   };
 

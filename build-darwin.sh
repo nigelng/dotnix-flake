@@ -7,4 +7,4 @@ if [ -z "${HOST}" ]; then
 fi
 
 nix build .#darwinConfigurations.${HOST}.system
-./result/sw/bin/darwin-rebuild switch --flake .
+./result/sw/bin/darwin-rebuild switch --flake .#${HOST}

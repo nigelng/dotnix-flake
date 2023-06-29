@@ -37,7 +37,6 @@ As mentioned, fish and zsh shells are available (asides from system provided she
   - [`humantime-fish`](https://github.com/jorgebucaran/humantime.fish)
   - [`done`](https://github.com/franciscolourenco/done)
   - [`bass`](https://github.com/edc/bass)
-  - [`github-copilot-cli`](https://github.com/z11i/github-copilot-cli.fish)
 
 - Zsh shell extensions are (managed via [`zimfw`](https://zimfw.sh))
   - [`pure theme`](https://github.com/sindresorhus/pure)

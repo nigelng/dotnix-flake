@@ -3,10 +3,10 @@
     "baseConfig": {
       "flake": false,
       "locked": {
-        "lastModified": 1687822124,
-        "narHash": "sha256-J95XoUTCQqJPdIChvNkz6LZF+ngsq98qSw5yr0kMB8I=",
+        "lastModified": 1688040246,
+        "narHash": "sha256-w8q7KyHisZihA4cIH8NvUyRydpU8HU8rmCNgrmkTank=",
         "ref": "refs/heads/nn-m16",
-        "rev": "4c613d7ac6e388d7e2aa03e4c86f37eb630a428c",
+        "rev": "2624699f8be4c514c01f9c8b116b66a167319b4b",
         "revCount": 6,
         "type": "git",
         "url": "file:./config"
