@@ -33,8 +33,8 @@ in {
         italic_font = "BlexMono Nerd Font Italic";
         bold_italic_font = "BlexMono Nerd Font Bold Italic";
 
-        font_size = "16.0";
-        adjust_line_height = "120%";
+        font_size = "14.0";
+        adjust_line_height = "110%";
 
         background_opacity = "0.95";
         window_padding_width = "3";
