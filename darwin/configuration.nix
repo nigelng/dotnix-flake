@@ -34,7 +34,12 @@ in {
   environment = {
     systemPackages = systemApps;
     shells = with pkgs; [ fish zsh ];
-    variables = { VISUAL = "code"; };
+    variables = {
+      EDITOR = "vim";
+      VISUAL = "code";
+      CHROME_EXECUTABLE =
+        "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser";
+    };
   };
 
   programs = {
