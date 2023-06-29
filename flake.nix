@@ -42,11 +42,10 @@
       #   inputs.mahConfig.follows = "baseConfig";
       # };
 
-      nixpkgs.url =
-        "github:nixos/nixpkgs/nixos-unstable"; # Unstable Nix Packages
+      nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05"; # Unstable Nix Packages
 
       home-manager = { # User Package Management
-        url = "github:nix-community/home-manager";
+        url = "github:nix-community/home-manager?ref=release-23.05";
         inputs.nixpkgs.follows = "nixpkgs";
       };
 

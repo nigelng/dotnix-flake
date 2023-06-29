@@ -103,8 +103,8 @@ Notes:
 ### Mac OS
 
 ```sh
-nix build .#darwinConfigurations.<host>.system
-./result/sw/bin/darwin-rebuild switch --flake .
+nix build .#darwinConfigurations.<hostname>.system
+./result/sw/bin/darwin-rebuild switch --flake .#<hostname>
 ```
 
 **Note**: After initial setup, `darwin-rebuild` should be in `PATH`
