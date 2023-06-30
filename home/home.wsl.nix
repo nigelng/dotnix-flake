@@ -7,14 +7,19 @@ in {
   };
 
   config = mkIf cfg.enable {
+    home = {
+      sessionVariables = { AWS_VAULT_BACKEND = "pass"; };
+      shellAliases = { op = "/usr/bin/op"; };
+    };
+
+    programs.password-store = { enable = true; };
+
     services.gpg-agent = {
       enable = true;
       defaultCacheTtl = 360;
       enableFishIntegration = true;
       enableZshIntegration = true;
     };
-
-    home.shellAliases = { op = "/usr/bin/op"; };
   };
 }
 
