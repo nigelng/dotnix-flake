@@ -28,9 +28,11 @@
       enableFishIntegration = true;
       settings = {
         # Other config here
-        format = "$all"; # Remove this line to disable the default prompt format
         palette = "catppuccin_${flavour}";
-      } // builtins.fromTOML (builtins.readFile (pkgs.fetchFromGitHub {
+      } // builtins.fromTOML (builtins.readFile (pkgs.fetchurl {
+        url = "https://starship.rs/presets/toml/bracketed-segments.toml";
+        sha256 = "TdM65nZ/GOaZuy7rkjeuv6Ti9Oa2/gIn0fLy9Y2iKkA=";
+      })) // builtins.fromTOML (builtins.readFile (pkgs.fetchFromGitHub {
         owner = "catppuccin";
         repo = "starship";
         rev =

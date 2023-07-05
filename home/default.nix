@@ -23,7 +23,7 @@ in {
         keyserver-options = "include-revoked";
       };
     };
-    htop.enable = true;
+    btop.enable = true;
     man.enable = true;
     ssh = {
       enable = true;
