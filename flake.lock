@@ -3,15 +3,16 @@
     "baseConfig": {
       "flake": false,
       "locked": {
-        "lastModified": 1688359779,
-        "narHash": "sha256-uvqB117RpeVD6yjU+beMWe0lDZcVFhFWiZf/52wsSpo=",
-        "ref": "refs/heads/oo-m14",
-        "rev": "17f7f47bc8015a7c2c055304abf8b94816a8dc26",
-        "revCount": 7,
+        "lastModified": 1688424103,
+        "narHash": "sha256-ofTW5WSzRS86DW4GzxDWSgCHs01IrXfOufok66+Px4M=",
+        "ref": "nn-m16",
+        "rev": "459ba1b86ffc6f3447792f461d5ede6389780f4d",
+        "revCount": 6,
         "type": "git",
         "url": "file:./config"
       },
       "original": {
+        "ref": "nn-m16",
         "type": "git",
         "url": "file:./config"
       }

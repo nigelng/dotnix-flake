@@ -33,7 +33,7 @@
   inputs = # All flake references used to build my NixOS setup. These are dependencies.
     {
       baseConfig = {
-        url = "git+file:./config";
+        url = "git+file:./config?ref=nn-m16";
         flake = false;
       };
 
