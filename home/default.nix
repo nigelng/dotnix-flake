@@ -23,7 +23,10 @@ in {
         keyserver-options = "include-revoked";
       };
     };
-    btop.enable = true;
+    btop = {
+      enable = true;
+      settings = { color_theme = "catppuccin_mocha"; };
+    };
     man.enable = true;
     ssh = {
       enable = true;
@@ -65,6 +68,8 @@ in {
   };
 
   home = {
+    file.".config/btop/themes/catppuccin_mocha.theme".source =
+      ./themes/btop_catppuccin_mocha;
     stateVersion = systemConfig.homeManagerVersion;
     packages = userApps;
 
